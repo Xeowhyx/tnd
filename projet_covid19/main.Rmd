@@ -1,0 +1,724 @@
+---
+title: "covid19"
+output: rmarkdown::github_document
+---
+
+
+
+```{r setup, include=FALSE}
+```
+
+
+
+
+Ce projet a pour but de mettre en pratique une approche initiale des différentes analyses
+supervisées et non supervisées abordées en cours, au moyen du logiciel et langage de
+programmation statistique R. Nous nous intéressons à une problématique d’actualité, à savoir
+l’épidémie du virus COVID-19. L’objectif de ce projet est d’analyser les données disponibles sur cette
+pandémie afin d’essayer de comprendre l’évolution ainsi que la dynamique de propagation du viru
+
+## Partie1: Analyses descriptives
+
+Nous souhaitons effectuer une analyse descriptive des données disponibles à propos du COVID-19
+par département en France. Les données considérées proviennent de la base de données
+“Chiffres-clés” disponible sur le site “data.gouv.fr” auxquelles nous avons ajouté des informations
+sur la localisation géographique des départements. La période étudiée dans ce projet est celle du 1er
+Avril 2020 au 14 Avril 2020.
+
+1. Charger le jeu de donnée sous R
+
+```{r}
+data=read.csv2("donnes_covid19_avril_total_par_departement_GPS.csv")
+#View(data)
+data
+```
+
+2. Présentation du jeu de donnée, puis analyse descriptive
+
+```{r}
+summary(data)
+dim(data)
+select=c(2,5:8)
+min=apply(data[select],2,min)
+max=apply(data[select],2,max)
+var=max-min
+var
+apply(data[select],2,sd)
+apply(data[select],2,mean)
+```
+\
+le jeu de donnée a une dimension 100 ligne et 8 colonnes\
+le jeu de donnée nous donnes le nombre de:\
+deces total (int)\
+reanimation total (int)\
+hospitalisation total (int)\
+gueris total (int)\
+en fonction des noms (string) des 100 departements francais.\
+Chaque departement possede une localisation GPS indiqué par la longitude et l'altitude.\
+On remarqu'il y a 3 départements qui possèdent 0 deces.\
+Ces nombres sont prévelés selon une duree_jours qui indique en nombre de jour (int).\
+La variables duree_jour est la moins étendu, seulement de 5 (entre 15 et 20) avec un ecart type de 1.1 et moyenne de 15.42.
+Alors que la variable hospitalises_total est la plus étendu de 46k avec un ecart type de 7k1 et une moyenne de 4k3.\
+Il y a des valeurs extrêmes pour deces_total reanimation_total hostpitalises_total et gueris_totral, car la moyenne est toujours au moins 2 fois plus élevé que la medianne\
+\
+\
+On représente te les données quantitifs (cumulé) générals à tous les départements, en excluent la durée et les coordonnées gps.
+```{r}
+gen=c(sum(data$deces_total), sum(data$reanimation_total), sum(data$hospitalises_total), sum(data$gueris_total))
+label=c('deces','reanimation','hospitalise','gueris')
+color=c('red','orange','yellow','green')
+pourcent<- round(100*gen/sum(gen), 1)
+pie(gen, labels=paste(pourcent,"%",sep=""), main = "Covid19",col=color)
+legend("topright", label, cex = 0.8,
+   fill=color)
+```
+\
+Il y a autant de décès que de réanimation.\
+Il y a 3 fois plus de guéris que de décès.\
+Il y a plus d'hospitalisé que de guéris.\
+\
+On va maintenant essayer de comparer les departements entre eux\
+On trie les données a affiché, et on fais un bloxplot sur les 20 premiers département pour avoir un echantillon
+```{r}
+df <- data.frame(t(data[c(5:length(data))]))
+colnames(df) <- data[,1]
+df=df[c(1:20)]
+barplot(height=as.matrix(df), main="covid19", ylab="quantite de pers",beside=FALSE,col=color,las=2)
+barplot(height=as.matrix(df), main="covid19", ylab="quantite de pers",beside=TRUE,col=color,las=2)
+legend("topright", c("deces","reanimation","hospitalise","gueris"), cex=1.0,bty="n",fill=color)
+```
+\
+La repartiton du covid19 n'est pas proportionnelle entre chaque départements.\
+Dans notre echantillon, on remarque qu'en Ariege il y a très peu de victime (-500) comparé aux Bas Rin, et Bouche du Rhone avec +35k chacun.\
+\
+Maintenant sur l'ensemble de nos données.
+```{r}
+df <- data.frame(t(data[c(5:length(data))]))
+colnames(df) <- data[,1]
+barplot(height=as.matrix(df), main="covid19", ylab="quantite de pers",beside=TRUE,col=color,las=2,horiz=FALSE)
+legend("topright", c("deces","reanimation","hospitalise","gueris"), cex=1.0,bty="n",fill=color)
+```
+\
+Maintenant on fais un boxplot sur uniquement les victimes du covid19.
+```{r}
+boxplot(scale(data[select],scale=TRUE, center=TRUE),las=2,col=c('pink',color))
+```
+\
+La variable durée possède des valeurs extreme en petite quantité, elle possede ses 4 quartils équilibré, elle n'est pas interessante.
+```{r}
+boxplot(scale(data[select][-1],scale=TRUE, center=TRUE),las=2,col=color)
+```
+\
+\
+Chaque variable possèdent plusieurs valeurs extremes, représentées par des points, elles dépassent le 4eme quartil,la plus grande valeur est dans la variable hospitalisation.\
+Pour chaque variable les quartils 1 et 2 sont repartis de façon équilibrée entre elles.\
+Pour la variable hospitalise_total, le quartil 3 et 4 sont equilibre entre elles.\
+Pour les 3 autres variables, le quartil 3 est etendu, et le quartil 4 l'est encore plus.\
+\
+Maintenant on fais des histogrammes.
+```{r}
+hist(data$deces_total,col = "red")
+```
+\
+80% des departement ont moins de 1k mort.
+```{r}
+hist(data$reanimation_total,col = 'orange')
+```
+\
+85% des departements ont moins de 2k reanimation.
+```{r}
+hist(data$hospitalises_total,col = 'yellow')
+```
+\
+80% des departements ont moins de 5k victimes hosptilalise.
+```{r}
+hist(data$gueris_total,col = 'green')
+```
+\
+85% des departements ont moins de 5k personne gueris.\
+\
+Les 4 histogrammes traduient une répartition très concentré, la fréquence est très élevé lorsqu'elle est proche de 0 (la premiere barre), elle forme un groupe.\
+\
+\
+En vous inspirant du tutoriel suivant https://www.r-graph-gallery.com/330-bubble-map-with-ggplot2.html qui permet l’affichage de
+données sur des cartes géographiques à partir de coordonnées GPS (latitude et longitude),
+afficher chacune des variables «deces_total», «reanimation_total», «hospitalises_total» et
+«gueris_total» sur une carte géographique. Mettre en avant les données en utilisant des
+codes couleurs (jaune faible, rouge fort) ou alors en faisant varier les tailles des points.
+Analyser les résultats obtenus.
+\
+\
+Carte de france metropole (88 départements) sur les décès du au covid19.
+```{r}
+# install.packages("viridis")
+# install.packages("maps")
+# install.packages('mapproj')
+library(viridisLite)
+library(viridis)
+library(ggplot2)
+library(dplyr)
+library(maps)
+library(mapproj)
+
+fr <- map_data("world") %>% filter(region=="France")
+head(fr)
+head(data)
+ggplot() +
+  geom_polygon(data = fr, aes(x=long, y = lat, group=group), fill="grey", alpha=0.3, color='black')+
+  geom_point( data=data, aes(x=longitude, y=latitude, size=deces_total,color=deces_total))+
+  scale_size_continuous(range=c(1,12))+
+  scale_color_viridis(trans="log")+
+  theme_void() +
+  ylim(41,51) + xlim(-8,10)+
+  coord_map()
+```
+\
+Carte de france métropole sur les hospitalisations du au covid19.
+```{r}
+fr <- map_data("world") %>% filter(region=="France")
+ggplot() +
+  geom_polygon(data = fr, aes(x=long, y = lat, group=group), fill="grey", alpha=0.3, color='black')+
+  geom_point( data=data, aes(x=longitude, y=latitude, size=hospitalises_total,color=hospitalises_total))+
+  scale_size_continuous(range=c(1,12))+
+  scale_color_viridis(trans="log")+
+  theme_void() +
+  ylim(41,51) + xlim(-8,10)+
+  coord_map()
+```
+\
+Carte de france metropole sur les reanimations  du au covid19.
+```{r}
+fr <- map_data("world") %>% filter(region=="France")
+ggplot() +
+  geom_polygon(data = fr, aes(x=long, y = lat, group=group), fill="grey", alpha=0.3, color='black')+
+  geom_point( data=data, aes(x=longitude, y=latitude, size=reanimation_total,color=reanimation_total))+
+  scale_size_continuous(range=c(1,12))+
+  scale_color_viridis(trans="log")+
+  theme_void() +
+  ylim(41,51) + xlim(-8,10)+
+  coord_map()
+```
+\
+Carte de france metropole sur les guerris du covid19.
+```{r}
+fr <- map_data("world") %>% filter(region=="France")
+ggplot() +
+  geom_polygon(data = fr, aes(x=long, y = lat, group=group), fill="grey", alpha=0.3, color='black')+
+  geom_point( data=data, aes(x=longitude, y=latitude, size=gueris_total,color=gueris_total))+
+  scale_size_continuous(range=c(1,12))+
+  scale_color_viridis(trans="log")+
+  theme_void() +
+  ylim(41,51) + xlim(-8,10)+
+  coord_map()
+```
+\
+Les départements possédants le plus de décès, sont correlé positivement au nombre de personne gueris, au nombre de personne en réanimation ainsi qu'au nombre de personne en hospitalisation.\
+Ces regions forme des cluster, les plus imposant sont Paris et l'Est de la france, comme Strasbourg, Lyon, Marseilles.\
+Paris détiens le plus grand nombre d'hospitalisation et de reanimation, l'unique points jaune de la france pour les cartes correspondantes.\
+\
+\
+4. Faire la même chose avec le package
+leaflet.minichart https://cran.r-project.org/web/packages/leaflet.minicharts/vignettes/introduction.html
+\
+\
+On affiche la carte du monde avec nos données.
+```{r}
+# install.packages('leaflet.minicharts')
+library(leaflet.minicharts)
+library(dplyr)
+library(leaflet)
+tilesURL <- "http://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}"
+
+basemap <- leaflet(width = "100%", height = "700px") %>%
+  addTiles(tilesURL)
+datamap <- data %>% select(deces_total,reanimation_total, hospitalises_total, gueris_total)
+long=data$longitude
+lat=data$latitude
+
+basemap %>%
+  addMinicharts(
+    long,lat,
+    chartdata = datamap,
+    colorPalette = color,
+    width = 20, height = 65
+  )
+```
+\
+Sur cette carte tous les départements de frances sont représentés (présence de zoom intéractif).\
+Les departements outre mer possèdent moins de cas de covid19\
+\
+\
+## Partie 2 : Prédiction du nombre de décès
+\
+\
+Dans cette deuxième partie, nous souhaitons étudier et prédire le taux de mortalité des personnes
+atteintes du COVID-19 (variable «deces_total») selon les variables «reanimation_total»,
+«hospitalises_total» et «gueris_total».\
+\
+\
+1. Calculer la corrélation entre les différentes variables et afficher la matrice de corrélation à l’aide du package « corrplot ». Commenter les résultats.
+\
+\
+On fait la matrice de corrélation sur deces_total reanimation_total hospitalises_total et gueris_total.
+```{r}
+head(data)
+cor(data[c(5:8)])
+# install.packages("corrplot")
+library(corrplot)
+mcor=cor(data[c(5:8)])
+corrplot(mcor, method="pie")
+```
+\
+\
+2. Visualiser les nuages de points entre chaque variable et la variable à prédire «deces_total».
+Quelles sont les variables qui permettent d’expliquer au mieux la variable à prédire ?
+\
+\
+```{r}
+# plot(data$deces_total,data$reanimation_total)
+# plot(data$deces_total,data$hospitalises_total)
+# plot(data$deces_total,data$gueris_total)
+plot(data[c(6:8)], col=data$deces_total)
+```
+\
+Comme confirme plus tot les trois variables sont corrélé positivement à deces_total, les graphiques obtenues ont une tendances lineaire.\
+On remarque 3 groupes, un proche du coin inferieur gauche, un central, et un dernier compose d un point extreme au coin superieur droit.\
+\
+\
+3. Diviser votre jeu de données en deux ensembles apprentissage/test avec une proportion de 80%-20%.
+\
+\
+On divise nos données aléatoirement en 80-20 pour train et test respectivement.
+```{r}
+var=data[c(5:8)]
+sample=sample.int(n = nrow(var), size = floor(.80*nrow(var)))
+train=var[sample,]
+test=var[-sample,]
+train
+length(train$deces_total)
+test
+length(test$deces_total)
+```
+\
+\
+4. Réaliser une régression linéaire entre les variables explicatives «reanimation_total»,
+«hospitalises_total», «gueris_total», et la variable à expliquer «deces_total» sur l’ensemble
+d’apprentissage. Afficher et commenter les quatre graphiques de diagnostic.
+\
+\
+Régression lineaire entre la variable à prédire deces_total et la variable explicative reanimation_total.
+```{r}
+lm_reanimation= lm(deces_total ~ reanimation_total , data=data)
+plot(data$reanimation_total, data$deces_total)
+abline(lm_reanimation, col="red")
+```
+\
+Régression linéaire entre la variable à prédire deces_total et la variable explicative hospitalises_total.
+```{r}
+lm_hospitalises= lm(deces_total ~ hospitalises_total , data=data)
+plot(data$hospitalises_total, data$deces_total)
+abline(lm_hospitalises, col="red")
+```
+\
+Régression linéaire entre la variable à prédire deces_total et la variable explicative gueris_total.
+```{r}
+lm_gueris= lm(deces_total ~ gueris_total , data=data)
+plot(data$gueris_total, data$deces_total)
+abline(lm_gueris, col="red")
+```
+\
+Comme confirmé plus tot les trois variables sont corrélé positivement à deces_total, les graphiques obtenues ont une tendances lineaire.\
+Visuellement, les variables qui permettent de prédir au mieux deces_total sont les variables reanimation_total et hospitalises_total.\
+Sur le graphique de la régression linéaire de reanimation_total y a plus de points éparpillé, cela fait que la reanimation_total est un moins bon choix de prediction.\
+\
+On analyse en détails la régression linéaire sur reanimation_total.
+```{r}
+plot(lm_reanimation)
+```
+\
+On analyse en détails la régression linéaire sur gueris_total.
+```{r}
+plot(lm_gueris)
+```
+\
+On analyse en détails la régression linéaire sur hospitalises_total
+```{r}
+plot(lm_hospitalises)
+```
+\
+Sur les graphiques de type Residuals vs Leverage on remarqu'une valeurs extreme ayant une mauvaise influence sur notre regression.\
+les valeurs extreme se situe à l'exterieur de la courbe en pointillées.\
+Pour la variable gueris_total on a 2 valeurs extrême, la 45e et la 76e.\
+Pour la variable reanimation_total on a 1 valeur extrême,la 76e.\
+Pour la variable hospitalisatises_total on a 1 valeur extrême, la 45e.\
+La 76e valeur correspond à Paris et la 45e à Haut-Rin.\
+Nous allons donc ajuster nos données et refaire une analyse sans les valeurs extrême associées aux variables citées.\
+\
+Régression linéaire OPTIMISE entre la variable à prédire deces_total et la variable explicative hospitalises_totale.
+```{r}
+dataop=data[-c(45),]
+lm_hospitalises= lm(deces_total ~ hospitalises_total , data=dataop)
+plot(dataop$hospitalises_total, dataop$deces_total)
+abline(lm_hospitalises, col="red")
+plot(lm_hospitalises)
+```
+\
+Régression linéaire OPTIMISE entre la variable à predire deces_total et la variable explicative reanimation_total.
+```{r}
+dataop=data[-c(76),]
+lm_reanimation= lm(deces_total ~ reanimation_total , data=dataop)
+plot(dataop$reanimation_total, dataop$deces_total)
+abline(lm_reanimation, col="red")
+plot(lm_reanimation)
+```
+\
+Régression linéaire OPTIMISE entre la variable à predire deces_total et la variable explicative gueris_total.
+```{R}
+dataop=data[-c(45,76),]
+lm_gueris= lm(deces_total ~ gueris_total , data=dataop)
+plot(dataop$gueris_total, dataop$deces_total)
+abline(lm_gueris, col="red")
+plot(lm_gueris)
+```
+\
+Residuals vs Leverag:\
+Pour les 3 variables nous avons maintenant  un trace  Residuals vs Leverage correct.\
+Il n y a plus de valeurs qui ont une grande influence sur la droite de regression.\
+\
+Normal Q-Q pot:\
+Pour gueris_total le trace suit une ligne droite entre -1 et 1.3 donc le modele est bon.\
+Pour reanimation_total le trace suit une ligne droite entre -1.5 et 1.3 donc le modele est bon.\
+Pour hospitalises_total le trace suit une ligne droite entre -1.5 et 1.3 donc le modele est bon.\
+On notera que les lignes les plus droites les plus longtemps sont celles avec les variables hospitalises_total et reanimation_total.\
+C'est dans cette intervalle (non extreme) que notre modèle est le plus performant, il est capable de deviner des valeurs avec un taux de précision élevé.\
+\
+Scale location:\
+Pour gueris_total le tracé ne suit pas de ligne horizontale donc le modèle n'a pas une bonne généralisation.\
+Pour reanimation_total le tracé ne suit pas de ligne horizontale donc le modele n'a pas une bonne généralisation.\
+Pour hospitalises_total le tracé suit une ligne horizontale donc le modèle a une bonne généralisation.\
+\
+Residuals vs fitted:\
+Pour gueris_total le tracé suit une ligne horizontale donc il y a très peu d'erreur et la régression a une bonne capacitée de généralisation.\
+Pour reanimation_total le tracé suit un tracé moyennement horizontal, la droite descend de plus en plus bas, cela veut dire qu'il y a de plus en plus d erreur.\
+Pour hospitalises_total le tracé suit un tracé horizontal donc il y a très peu d'erreur et la régression a une bonne capacité de généralisation.\
+\
+Regression lineaire:\
+Sur le graphe hospital_total, nous avons la meilleur régression lineaire, il y a moins de disperssion comparé aux 2 autres variables.\
+Sur le graphe gueris_total, nous avons la 2eme meilleur regression lineaire.\
+La régression qui generalise le moins est celle de reanimation_total.\
+Ceci confirme nos analyses précédentes.\
+\
+\
+5. Commenter ensuite les résultats obtenus (les coefficients de régression liés à chaque
+variable).
+\
+\
+```{r}
+summary(lm_hospitalises)
+summary(lm_reanimation)
+summary(lm_gueris)
+```
+\
+Nous avons les informations de notre régression lineaire pour chaque variable.\
+l'equation est de forme:\
+y=ax+b+e\
+avec:\
+a le coef direct\
+b l'ordonnée à l'origine\
+e le bruit (la marge d erreur)\
+x la variable explicative (hospitalises_total, reanimation_total, gueris_total)\
+y est la fonction qui calcul le nombre de décès\
+\
+pour lm_hospitalises nous avons:\
+y=0.22x+40.8+(<2e-16)\
+Selon ce modèle, lorsqu'une personne est hospitalisé on peut estimer qu'on augmente le nombre de décès de 0.22\
+autrement dit, quand il y 5 hospitalisations on estime 1 mort (par le covid19).\
+\
+pour lm_reanimation nous avons:\
+y=1.05x+18.5+(<2e-16)\
+Selon ce modèle, lorsqu'une personne est reanimé on peut estimer qu'on augmente le nombre de décès de 1.05\
+autrement dit, quand il y 1 reanimation il y a 1 mort (par le covid10).\
+\
+pour lm_guerris nous avons:\
+y=0.36x-61.5+(<2e-16)\
+Selon ce modèle, lorqu'une personne est guerris on peut estimer qu'on augmente le nombre de décès de 0.36\
+autrement dit, quand il y 3 personnes guerris on estime 1 mort (par le covid19).\
+\
+p-valeur:\
+Pour nos 3 régression linéaire, le bruit obtenu est tres faible (<2e-16), on a donc (2e-13)% < 5%\
+on peu donc affirmer que:\
+Au risque de 5% d erreur, le coef direct 'a' est juste (pour nos 3 valeurs explicative, dans leurs linearisation respective).\
+\
+\
+6. Calculer les erreurs MAE (Mean Absolute Error) et MSE (Mean Squared Error) de l’ensemble
+d’apprentissage, puis celles de l’ensemble de test.\
+\
+\
+On créer nos fonctions de calcul MAE et MSE.
+```{r}
+MAE <- function(y_reel, y_est){
+  val = abs(y_reel-y_est)
+  mae_cal = mean(val)
+  return(mae_cal)
+}
+
+MSE <- function(y_reel, y_est){
+  val = (y_reel-y_est)^2
+  mse_cal = mean(val)
+  return(mse_cal)
+}
+```
+\
+on applique les mea et mse sur les régressions linéaire non optimisé car il possede le même ensemble de points (pour une meilleur coherence).\
+Puis on applique a nos 2 groupes train et test sur lm_hospitalises non optimisé.
+```{r}
+lm_hospitalises= lm(deces_total ~ hospitalises_total , data=data)
+# pour comparer avec la linearisation non optimise
+y_estime = predict(lm_hospitalises)
+maetra=MAE(train$deces_total,y_estime) 
+maetst=MAE(test$deces_total,y_estime) 
+msetra=MSE(train$deces_total,y_estime)
+msetst=MSE(test$deces_total,y_estime)
+mae=c(maetst,maetra)
+mse=c(msetst,msetra)
+mae_hospitalises=data.frame(mae,mse)
+rownames(mae_hospitalises)=c('test','train')
+```
+\
+Puis on applique a nos 2 groupes train et test sur lm_reanimation non optimisé.
+```{r}
+lm_reanimation= lm(deces_total ~ reanimation_total , data=data)
+# pour comparer avec la linearisation non optimise
+y_estime = predict(lm_reanimation)
+maetra=MAE(train$deces_total,y_estime) 
+maetst=MAE(test$deces_total,y_estime) 
+msetra=MSE(train$deces_total,y_estime)
+msetst=MSE(test$deces_total,y_estime)
+mae=c(maetst,maetra)
+mse=c(msetst,msetra)
+mae_reanimation=data.frame(mae,mse)
+rownames(mae_reanimation)=c('test','train')
+```
+\
+Puis on applique a nos 2 groupes train et test sur lm_gueris non optimisé.
+```{r}
+lm_gueris= lm(deces_total ~ gueris_total , data=data)
+# pour comparer avec la linearisation non optimise
+y_estime = predict(lm_gueris)
+maetra=MAE(train$deces_total,y_estime) 
+maetst=MAE(test$deces_total,y_estime) 
+msetra=MSE(train$deces_total,y_estime)
+msetst=MSE(test$deces_total,y_estime)
+mae=c(maetst,maetra)
+mse=c(msetst,msetra)
+mae_gueris=data.frame(mae,mse)
+rownames(mae_gueris)=c('test','train')
+```
+\
+Notons que nous avons amelioré les régressions linéaire sur les variables réanimation_total, hospitalises_total et gueris_total en supprimant 1 à 2 variable extreme, qui sont eux meme encore présents dans les échantillons 'test' et 'train'.\
+Idealement nous devons avoir un des echantillons 'test' et 'train' propre pour chacune de nos régression, mais cela est long et ne varie pas beaucoup le resulat final.\
+\
+\
+7. Que peut-on déduire de la comparaison des résultats des erreurs de l’ensemble
+d’apprentissage et de test ? Avec quelle précision pouvons-nous prédire le nombre de décès
+pour un département donné ?
+\
+\
+On va prendre les linéarisations non optimisé pour faire les comparaisons.\
+on recalcul donc les régressions lineaire.\
+```{r}
+mae_hospitalises
+mae_reanimation
+mae_gueris
+```
+\
+On remarque qu'entre le mae test (20%) et mae train (80%) une faible variance.\
+Alors que sur mse test (20%) et mse train (80%), les erreurs trouve sur le train sont beaucoup plus élevé.\
+La façon dont est calculé mae et mse sont differents, le mse mets les erreurs au carré, cela veut donc dire que les valeurs extrême vont fortement influencé, le mse est utilisé lorsque l'on veut être extremement précis (ou detecter des valeurs aberrantes) car il pénalise énorement les grandes grandes valeurs.\
+Dans tous les mae et mse, nous avons mae_reanimation qui possède la plus petite marge d'erreur, c'est donc la variable exlpicative qui permet de mieux prédire deces_total.\
+On peut prédire deces_total avec une marge d'erreur de 1k5 environ.\
+On dit qu'un département est un échantillon de la population total, sur un departement donné et avec la variable explicative reanimation_total, on peut donc prédire le nombre de deces_total avec une marge d'erreur de 1150.162.\
+\
+\
+## Partie 3 : Clustering des départements selon la dynamique de propagation du virus
+\
+\
+À travers cette partie nous souhaitons comprendre la dynamique de propagation du virus et voir s’il
+existe des départements pour lesquels le nombre de personnes guéries, atteintes et décédées du
+COVID-19 sont similaires.
+\
+\
+1. Réaliser une ACP. Dans un premier temps, visualiser le nuage des individus et le cercle des
+corrélations suivant les composantes principales obtenues. Qu’observez-vous ? Il conviendra
+d’interpréter de façon rigoureuse ces premiers résultats (le pourcentage d’inertie, les
+contributions des variables et des individus, etc).
+\
+\
+On fait une acp
+```{r}
+# data[c(5:8)]
+library(FactoMineR)
+pca=PCA(data[c(5:8)])
+summary(pca)
+```
+\
+Le centre du cercle de corrélation PCA graph of variables depend de la variaance des dimensions.\
+Sur le PCA graph of individuals on remarque la formation de 2 groupes, dont l'un très concentré ayant son centre vers 0,-1.\
+Sur le PCA graph of variables (cercle de corrélation), on remarque que nos 4 valeurs sont très fortement correle positivement a la dimension 1.\
+On a gueris_total et hospitalises_total ayant comme valeur proche de 1 sur dim 1 dans le cercle.\
+On a deces_total et reanimation_total ayant comme valeur proche de 0.9 sur dim 1 dans le cercle.\
+On a gueris_total et hospitalises_total qui sont pas corrélé a la dim 2 (valeur proche de 0).\
+On a deces_total ayant 0.25 sur dim 2 donc peu correle positivement.\
+On a reanimation_total ayant -0.25 sur dim 2 donc peu corrélé negativement.\
+\
+En regardant nos variables on a plus de précision sur les coordonnées des dimensions:
+On a par exemple hospitalises_total a 0.990 pour la dim 1 et gueris_total a 0.979 pour la dim 1.
+```{r}
+axe=pca$eig
+barplot(axe[,2], xlab="composents", ylab="variance %")
+```
+Le pca permet de reduire nos dimensions en perdant un minimum d information.\
+On passant de 4 dimensions a 2 dimensions, nous conservons 98.267% de nos donnees (inertie), que nous représentont dans le grapique PCA graph if individuals.\
+Avec les 4 dimensions on a 100% d information, c'est le plan d inertie maximum\
+la dimension 1, a elle seul a une inertie de 95.042%\
+\
+\
+2. Dans un second temps, projeter les individus (à savoir les départements) dans le plan
+d’inertie maximum et les colorier en utilisant la variable «deces_total» (voir l’exemple dans
+la section Gradients de couleurs pour un graphique en nuage de points sur le lien suivant
+http://www.sthda.com/french/wiki/ggplot2-couleurs-changer-les-couleurs-automatiquement-et-manuellement-logiciel-r-et-visualisation-de-donnees. Interpréter maintenant la disposition des individus en fonction de
+cette variable.
+\
+\
+On projette les coordonnées de tout les individus sur dim 1 et dim 2
+```{r}
+# library(ggplot2)
+ind=pca$ind$coord
+ind=as.data.frame(ind)
+monplot=ggplot(ind, aes(x=Dim.1, y=Dim.2, color=data$deces_total)) + geom_point()
+monplot
+```
+\
+Moins il y a de mort, et plus les departements ont des variables similaire (reanimation_total gueris_total et hospitalises_total), cela forme un cluster.
+\
+\
+Réaliser diverses classifications non-supervisées (clustering) au moyen des différents
+algorithmes étudiés en cours : K-means, CAH avec les 4 critères (lien minimum, moyen,
+maximum, Ward). Expliquer comment vous avez choisi le nombre de classes.
+\
+\
+On fait des k-means
+```{r}
+ind=ind[,c(1:2)]
+kmeans = kmeans(ind,2)
+plot(ind$Dim.1,ind$Dim.2, col=kmeans$cluster)
+
+kmeans = kmeans(ind,3)
+plot(ind$Dim.1,ind$Dim.2, col=kmeans$cluster)
+
+kmeans = kmeans(ind,4)
+plot(ind$Dim.1,ind$Dim.2, col=kmeans$cluster)
+
+kmeans = kmeans(ind,5)
+plot(ind$Dim.1,ind$Dim.2, col=kmeans$cluster)
+```
+\
+CAH lien minimum
+```{r}
+dist=dist(ind, method = "euclidean")
+hcmin=hclust(dist, method = "single")
+plot(hcmin, hang=-1)
+```
+\
+CAH lien moyen
+```{r}
+hcmoy=hclust(dist, method = "average")
+plot(hcmoy, hang=-1)
+```
+\
+CAH lien maximum
+```{r}
+hcmax=hclust(dist, method = "complete")
+plot(hcmax, hang=-1)
+```
+\
+CAH lien ward
+```{r}
+dist=dist(ind, method = "euclidean")
+hcward=hclust(dist, method = "complete")
+plot(hcward, hang=-1)
+```
+\
+Avec le nombrede classe=1, pas d interet.\
+Avec un nombre de classe=2, dans le kmeans =2 on voit une bonne séparation des individus cela peut etre un bon choix.\
+Avec un nombre de classe=3, dans le kmeans k=3 on observe une mauvaise séparation entre les individus rouge et noir, donc c'est un mauvais choix.\
+Avec un nombre de classe=4, on vois une très net séparation des individus en 4 groupes, c'est un tres bon choix, de plus on isole un individus extrême.\
+Avec un nombre de classe=5, on sépare le premimer cluster en deux, cela nous donne une trop bonne précision comparé au 3eme cluster (bleu ciel dans le graphique kmeans=5).\
+les dendogrammes nous montrent aussi de bon cluster qu'on pourrait regrouper par paquet de 4.\
+On choisi donc le nombre de classe 4.\
+\
+\
+4. Présenter et réaliser une étude comparative entre les résultats des différents algorithmes
+sous forme d’un tableau. Projeter les groupes obtenus par chaque méthodes (clusters) sur le
+nuage des individus et interpréter les groupes obtenus.
+\
+\
+On creer un dataframe de nos précédent resultat.
+```{r}
+min_x=c(hcmin$merge[,1])
+min_y=c(hcmin$merge[,2])
+hcmoy_x=c(hcmoy$merge[,1])
+hcmoy_y=c(hcmoy$merge[,2])
+hcmax_x=c(hcmax$merge[,1])
+hcmax_y=c(hcmax$merge[,2])
+hcward_x=c(hcward$merge[,1])
+hcward_y=c(hcward$merge[,2])
+
+tab=data.frame(min_x,min_y,
+               hcmoy_x,hcmoy_y,
+               hcmax_x,hcmax_y,
+               hcward_x,hcward_y)
+tab
+```
+\
+Puis on fait 2 nuage de point:\
+un avec jitter (a factor=10) pour générer un peu d'imprecision et eviter les superpositions de trop de points au meme endroit.\
+et un sans jitter, pour pouvoir mieux les comparer.
+```{r}
+# plot(x=tab$min_x,y=tab$min_y,col='blue')
+# plot(x=tab$hcmoy_x,y=tab$hcmoy_y,col='black')
+
+plot(x=jitter(tab$min_x,factor=10),y=jitter(tab$min_y,factor=10),type="p",col="red")
+lines(x=jitter(tab$hcmoy_x,factor=10), y=jitter(tab$hcmoy_y,factor=10),col='blue',type='p')
+lines(x=jitter(tab$hcmax_x,factor=10), y=jitter(tab$hcmax_y,factor=10),col='green',type='p')
+lines(x=jitter(tab$hcward_x,factor=10),y=jitter(tab$hcward_y,factor=10),col='black',type='p')
+
+plot(x=(tab$min_x),y=(tab$min_y),type="p",col="red")
+lines(x=(tab$hcmoy_x), y=(tab$hcmoy_y),col='blue',type='p')
+lines(x=(tab$hcmax_x), y=(tab$hcmax_y),col='green',type='p')
+lines(x=(tab$hcward_x),y=jitter(tab$hcward_y),col='black',type='p')
+```
+\
+Les 4 méthodes ward min max moy detectent a peu près au meme endroits les même individus (lorsqu'il y en a beaucoup).\
+Les 4 méthodes se mettent en accord pour former les même cluster lorsque cela est evident, cela s'observe en haut à droite.\
+Les différences ce sont font voir, lorsqu'il y a des individus isolé, chaque méthodes aura tendance à former des cluster de facon differente, comme cela se remarque dans le graphique en haut à gauche et en bas à gauche.\
+Les individus en haut à droite, correspondent à des départements avec des stats (reanimation_total, deces_total, hospitalises_total, gueris_total) très génériques alors que ceux qui sont vers la gauche ont de stats plus étonnantes, particulière voir unique.\
+\
+\
+5. Que peut-on déduire de l’analyse des résultats des trois parties ?
+\
+\
+Les 3 variables explicatives reanimation_total hospitalises_totale et gueris_total sont positivement forement corrélé.\
+Il y a une légère meilleurs corrélation positif entre gueris_totale et deces_total, ainsi que reanimation_total et deces_total.\
+Mais nous avons eu un meilleur modèle de régression avec la variable hosptial_total sur deces_total.\
+Et nous avons eu, une plus petite marge d'erreur sur nos train/test avec la variable reanimation_total sur les prédictions de deces_total\
+On peut dire, que hospitales_total fait de meilleurs prédictions, mais lorsqu'elles sont mauvaise, elles ont une marge d'erreur plus élevé que sur la régression reanimation_total.\
+Cette différence s'explique par la dispersion des individus, c'est compliqué de creer un modèles qui fait les meilleurs predictions dans toutes les circonstances, il est donc necessaire d'adapter ses modèles selon les cluster que l'on detecte.\
+Si on creer un modèle en utilisant les données de plusieurs cluster à la fois, on aura des prédiction général sur chacune de ses cluster.\
+Si on veut des résultats très precis dans un cluster en particulier, on doit générer notre régression linéaire sur seulement ce cluster.\
+Par exemple sur le graphique de la question précédente, les départements du groupe rouge sont plus présent en haut qu'en bas, il est donc possible de refaire une linéarisation uniquement sur les individus rouge, on aura de meilleurs précisions pour les individus rouges. (il faudra néanmoins savoir attribuer un cluster à un département).\
+On a remarqué à plusieurs reprise que certain département ont une grande influence sur nos prédiction, cela exagère nos erreurs, c'est verifié avec le calcul de MSE, qui permet d'accentuer les erreurs extrêmes.\
+Pour des prédictions précise, de cluster precise, il est recommandé d utilser le MSE.\
+Pour des prédictions générals, sur une large population d'individus, il est recommandé d'utiliser le MAE./
+Les outils de classification et de régressions sont donc complémentaire pour des prédictions plus precises.
+
