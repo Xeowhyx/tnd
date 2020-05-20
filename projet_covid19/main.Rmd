@@ -245,10 +245,15 @@ x=basemap %>%
     width = 20, height = 65
   )
 ```
-
+\
+Pour le rendu de la carte, executer le fichier main.rmd ou main.html
+\
 ```{r echo=FALSE}
-#x
+x
 ```
+\
+Pour le rendu de la carte, executer le fichier main.rmd ou main.html
+\
 \
 Sur cette carte tous les départements de frances sont représentés (présence de zoom intéractif).\
 Les departements outre mer possèdent moins de cas de covid19\
