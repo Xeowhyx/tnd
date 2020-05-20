@@ -237,13 +237,17 @@ datamap <- data %>% select(deces_total,reanimation_total, hospitalises_total, gu
 long=data$longitude
 lat=data$latitude
 
-basemap %>%
+x=basemap %>%
   addMinicharts(
     long,lat,
     chartdata = datamap,
     colorPalette = color,
     width = 20, height = 65
   )
+```
+
+```{r echo=FALSE}
+x
 ```
 \
 Sur cette carte tous les départements de frances sont représentés (présence de zoom intéractif).\

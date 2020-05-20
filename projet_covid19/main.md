@@ -615,7 +615,7 @@ datamap <- data %>% select(deces_total,reanimation_total, hospitalises_total, gu
 long=data$longitude
 lat=data$latitude
 
-basemap %>%
+x=basemap %>%
   addMinicharts(
     long,lat,
     chartdata = datamap,
@@ -624,8 +624,8 @@ basemap %>%
   )
 ```
 
-<!--html_preserve--><div id="htmlwidget-80a8e32a07642feb53a9" style="width:100%;height:700px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-80a8e32a07642feb53a9">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["http://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false}]},{"method":"addMinicharts","args":[[{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-0.3962844,46.5926541)","lat":46.5926541,"lng":-0.3962844},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-0.4330578,49.1213315)","lat":49.1213315,"lng":-0.4330578},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-0.4502368,44.849665)","lat":44.849665,"lng":-0.4502368},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-0.4877852,47.2913545)","lat":47.2913545,"lng":-0.4877852},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-0.620935,48.3061239)","lat":48.3061239,"lng":-0.620935},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-0.7532809,43.3269942)","lat":43.3269942,"lng":-0.7532809},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-0.7532809,43.9412045)","lat":43.9412045,"lng":-0.7532809},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-0.7733188,45.74949)","lat":45.74949,"lng":-0.7733188},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-1.3115949,49.114712)","lat":49.114712,"lng":-1.3115949},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-1.4482662,46.6613966)","lat":46.6613966,"lng":-1.4482662},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-1.5300695,48.2292016)","lat":48.2292016,"lng":-1.5300695},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-1.8157647,47.2780468)","lat":47.2780468,"lng":-1.8157647},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-106.1202374,39.4196684)","lat":39.4196684,"lng":-106.1202374},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-2.9001865,47.8852929)","lat":47.8852929,"lng":-2.9001865},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-3.3263676,48.5108101)","lat":48.5108101,"lng":-3.3263676},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-3.9300525,48.2520249)","lat":48.2520249,"lng":-3.9300525},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-53.125782,3.933889)","lat":3.933889,"lng":-53.125782},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-61.024174,14.641528)","lat":14.641528,"lng":-61.024174},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-61.551,16.265)","lat":16.265,"lng":-61.551},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-74.0616663,41.0550683)","lat":41.0550683,"lng":-74.0616663},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-75.313613,39.98568)","lat":39.98568,"lng":-75.313613},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-89.437921,43.190526)","lat":43.190526,"lng":-89.437921},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-89.960102,38.8622693)","lat":38.8622693,"lng":-89.960102},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-95.6015299,37.0353628)","lat":37.0353628,"lng":-95.6015299},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-96.632621,32.820195)","lat":32.820195,"lng":-96.632621},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (0.0848201,48.6388567)","lat":48.6388567,"lng":0.0848201},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (0.1494988,43.0193924)","lat":43.0193924,"lng":0.1494988},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (0.1534761,45.7519958)","lat":45.7519958,"lng":0.1534761},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (0.1655803,47.9217014)","lat":47.9217014,"lng":0.1655803},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (0.3033295,47.2648983)","lat":47.2648983,"lng":0.3033295},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (0.4502368,43.6366479)","lat":43.6366479,"lng":0.4502368},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (0.4502368,44.2470173)","lat":44.2470173,"lng":0.4502368},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (0.7572205,45.1469486)","lat":45.1469486,"lng":0.7572205},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (0.816097,47.2894925)","lat":47.2894925,"lng":0.816097},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (0.9582114,49.1181763)","lat":49.1181763,"lng":0.9582114},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (0.9748439,49.6054187)","lat":49.6054187,"lng":0.9748439},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (1.135302,43.4010462)","lat":43.4010462,"lng":1.135302},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (1.1989814,48.5525242)","lat":48.5525242,"lng":1.1989814},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (1.2891036,44.0126679)","lat":44.0126679,"lng":1.2891036},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (1.4025484,45.7435173)","lat":45.7435173,"lng":1.4025484},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (1.4159072,47.6761905)","lat":47.6761905,"lng":1.4159072},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (1.443469,42.9326292)","lat":42.9326292,"lng":1.443469},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (1.8256572,48.7850939)","lat":48.7850939,"lng":1.8256572},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.0195909,45.4320081)","lat":45.4320081,"lng":2.0195909},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.0627832,46.0377633)","lat":46.0377633,"lng":2.0627832},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.1569416,48.4585698)","lat":48.4585698,"lng":2.1569416},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.1581351,49.0615901)","lat":49.0615901,"lng":2.1581351},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.2018172,47.900771)","lat":47.900771,"lng":2.2018172},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.2188068,48.828508)","lat":48.828508,"lng":2.2188068},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.2593428,42.9569049)","lat":42.9569049,"lng":2.2593428},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.2707095,49.914518)","lat":49.914518,"lng":2.2707095},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.3244679,50.5732769)","lat":50.5732769,"lng":2.3244679},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.3522219,48.856614)","lat":48.856614,"lng":2.3522219},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.4146396,49.4214568)","lat":49.4214568,"lng":2.4146396},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.4740337,48.7931426)","lat":48.7931426,"lng":2.4740337},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.4845729,48.9137455)","lat":48.9137455,"lng":2.4845729},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.539603,42.6012912)","lat":42.6012912,"lng":2.539603},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.6189273,44.2179747)","lat":44.2179747,"lng":2.6189273},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.6326062,45.1191997)","lat":45.1191997,"lng":2.6326062},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.999366,48.841082)","lat":48.841082,"lng":2.999366},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (3.0155825,45.7124142)","lat":45.7124142,"lng":3.0155825},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (3.2583626,43.5912356)","lat":43.5912356,"lng":3.2583626},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (3.4167655,46.3115552)","lat":46.3115552,"lng":3.4167655},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (3.4417368,49.4769199)","lat":49.4769199,"lng":3.4417368},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (3.5294522,47.2381708)","lat":47.2381708,"lng":3.5294522},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (3.5812692,44.494203)","lat":44.494203,"lng":3.5812692},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (3.6079823,47.8652728)","lat":47.8652728,"lng":3.6079823},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (3.9266366,45.0821226)","lat":45.0821226,"lng":3.9266366},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (4.3732462,48.1563418)","lat":48.1563418,"lng":4.3732462},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (4.486671,46.5827512)","lat":46.5827512,"lng":4.486671},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (4.5624426,44.759629)","lat":44.759629,"lng":4.5624426},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (4.5677117,48.7083223)","lat":48.7083223,"lng":4.5677117},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (4.6285053,49.7624642)","lat":49.7624642,"lng":4.6285053},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (4.635412,47.5126795)","lat":47.5126795,"lng":4.635412},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (4.874339,45.525587)","lat":45.525587,"lng":4.874339},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (45.166244,-12.8275)","lat":-12.8275,"lng":45.166244},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (5.1071322,48.1260968)","lat":48.1260968,"lng":5.1071322},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (5.1307681,46.2475706)","lat":46.2475706,"lng":5.1307681},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (5.1432068,44.0565054)","lat":44.0565054,"lng":5.1432068},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (5.2266675,44.7311896)","lat":44.7311896,"lng":5.2266675},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (5.2823997,49.0824319)","lat":49.0824319,"lng":5.2823997},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (5.3102505,43.5911679)","lat":43.5911679,"lng":5.3102505},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (5.6864994,45.6402905)","lat":45.6402905,"lng":5.6864994},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (5.9293476,44.9957745)","lat":44.9957745,"lng":5.9293476},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (55.536384,-21.115141)","lat":-21.115141,"lng":55.536384},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (6.0947014,48.7997007)","lat":48.7997007,"lng":6.0947014},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (6.1556282,47.7569806)","lat":47.7569806,"lng":6.1556282},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (6.2375947,44.0778716)","lat":44.0778716,"lng":6.2375947},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (6.3126004,47.1969824)","lat":47.1969824,"lng":6.3126004},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (6.3226072,44.6008723)","lat":44.6008723,"lng":6.3226072},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (6.3355935,48.1446427)","lat":48.1446427,"lng":6.3355935},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (6.4724,45.4932045)","lat":45.4932045,"lng":6.4724},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (6.5389621,46.1756788)","lat":46.1756788,"lng":6.5389621},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (6.5527641,49.0983839)","lat":49.0983839,"lng":6.5527641},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (6.9207716,47.5946573)","lat":47.5946573,"lng":6.9207716},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (7.179026,43.9466791)","lat":43.9466791,"lng":7.179026},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (7.2441099,47.9315041)","lat":47.9315041,"lng":7.2441099},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (7.5252938,48.6343172)","lat":48.6343172,"lng":7.5252938},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (8.9245343,41.8102633)","lat":41.8102633,"lng":8.9245343},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (9.2785583,42.4097877)","lat":42.4097877,"lng":9.2785583},"timeSteps":1}],[[[113,120,487,284]],[[350,764,2147,917]],[[763,1368,4530,4941]],[[756,882,2691,3489]],[[248,226,1029,425]],[[219,409,1269,1106]],[[78,166,340,315]],[[255,350,1182,677]],[[241,319,1001,566]],[[292,359,1036,839]],[[376,570,2268,1544]],[[1000,1128,3790,2907]],[[96,340,825,511]],[[729,477,2053,2113]],[[198,187,979,576]],[[158,511,1394,965]],[[0,12,129,128]],[[63,268,745,602]],[[129,254,547,605]],[[260,187,1337,709]],[[360,138,997,214]],[[2712,3853,12565,7016]],[[284,554,1399,946]],[[14,107,259,502]],[[633,808,3608,4071]],[[171,181,966,1041]],[[94,99,901,476]],[[87,89,216,372]],[[402,412,1831,1676]],[[1266,1475,6964,3342]],[[104,70,424,192]],[[51,98,438,207]],[[17,83,344,303]],[[346,790,2561,1107]],[[333,143,1042,496]],[[1064,1563,5012,2954]],[[300,1563,3711,2873]],[[466,422,2662,1542]],[[39,131,250,116]],[[137,261,1023,507]],[[218,213,1226,634]],[[13,70,259,174]],[[3054,2762,14353,8433]],[[141,139,651,350]],[[36,130,306,79]],[[2208,3129,14985,5659]],[[4149,2510,12911,11645]],[[417,1066,3630,1943]],[[5384,6170,28411,16028]],[[478,263,1308,1134]],[[1339,1062,5048,2865]],[[975,1613,5792,3655]],[[10285,12013,45669,23513]],[[2566,1044,5876,4868]],[[5804,4439,28084,12035]],[[5421,3508,21287,10549]],[[291,506,1542,2306]],[[200,137,850,644]],[[0,111,367,89]],[[2453,2839,10761,8532]],[[154,493,1118,834]],[[888,1090,3686,4323]],[[138,266,745,959]],[[1641,602,3563,3204]],[[92,137,539,130]],[[0,19,113,152]],[[256,288,1375,748]],[[60,90,367,503]],[[618,340,2536,1371]],[[1099,524,2683,2904]],[[472,282,1473,2249]],[[1415,957,5611,4739]],[[118,254,1061,544]],[[1283,1004,4180,4981]],[[261,365,846,621]],[[37,52,269,278]],[[429,245,1406,808]],[[431,446,1691,1457]],[[249,310,1173,1273]],[[948,950,3583,2264]],[[526,317,2315,2088]],[[1877,3681,15822,13834]],[[3657,4011,17894,11219]],[[476,863,3388,2339]],[[0,51,620,715]],[[1917,2415,7238,4292]],[[593,248,1237,1198]],[[55,68,452,783]],[[826,1078,2838,2937]],[[27,218,824,785]],[[1962,522,3908,3142]],[[268,444,1694,2170]],[[985,1196,4157,4475]],[[5577,2523,15376,9153]],[[1375,609,3239,2715]],[[766,1088,3484,2939]],[[7703,2216,15648,15248]],[[4416,3989,16072,10818]],[[414,287,1149,735]],[[39,24,153,999]]],45669,["red","orange","yellow","green"],["1"],null,{"showTitle":true,"showValues":true,"labels":["deces_total","reanimation_total","hospitalises_total","gueris_total"],"supValues":null,"supLabels":[],"html":null,"noPopup":false,"digits":null},null]},{"method":"addLegend","args":[{"colors":["red","orange","yellow","green"],"labels":["deces_total","reanimation_total","hospitalises_total","gueris_total"],"na_color":null,"na_label":"NA","opacity":1,"position":"topright","type":"unknown","title":null,"extra":null,"layerId":"minichartsLegend","className":"info legend","group":null}]}],"limits":{"lat":[-21.115141,50.5732769],"lng":[-106.1202374,55.536384]}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
+<!--html_preserve--><div id="htmlwidget-45260953f1ce7aaec0e3" style="width:100%;height:700px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-45260953f1ce7aaec0e3">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["http://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false}]},{"method":"addMinicharts","args":[[{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-0.3962844,46.5926541)","lat":46.5926541,"lng":-0.3962844},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-0.4330578,49.1213315)","lat":49.1213315,"lng":-0.4330578},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-0.4502368,44.849665)","lat":44.849665,"lng":-0.4502368},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-0.4877852,47.2913545)","lat":47.2913545,"lng":-0.4877852},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-0.620935,48.3061239)","lat":48.3061239,"lng":-0.620935},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-0.7532809,43.3269942)","lat":43.3269942,"lng":-0.7532809},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-0.7532809,43.9412045)","lat":43.9412045,"lng":-0.7532809},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-0.7733188,45.74949)","lat":45.74949,"lng":-0.7733188},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-1.3115949,49.114712)","lat":49.114712,"lng":-1.3115949},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-1.4482662,46.6613966)","lat":46.6613966,"lng":-1.4482662},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-1.5300695,48.2292016)","lat":48.2292016,"lng":-1.5300695},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-1.8157647,47.2780468)","lat":47.2780468,"lng":-1.8157647},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-106.1202374,39.4196684)","lat":39.4196684,"lng":-106.1202374},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-2.9001865,47.8852929)","lat":47.8852929,"lng":-2.9001865},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-3.3263676,48.5108101)","lat":48.5108101,"lng":-3.3263676},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-3.9300525,48.2520249)","lat":48.2520249,"lng":-3.9300525},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-53.125782,3.933889)","lat":3.933889,"lng":-53.125782},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-61.024174,14.641528)","lat":14.641528,"lng":-61.024174},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-61.551,16.265)","lat":16.265,"lng":-61.551},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-74.0616663,41.0550683)","lat":41.0550683,"lng":-74.0616663},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-75.313613,39.98568)","lat":39.98568,"lng":-75.313613},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-89.437921,43.190526)","lat":43.190526,"lng":-89.437921},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-89.960102,38.8622693)","lat":38.8622693,"lng":-89.960102},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-95.6015299,37.0353628)","lat":37.0353628,"lng":-95.6015299},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (-96.632621,32.820195)","lat":32.820195,"lng":-96.632621},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (0.0848201,48.6388567)","lat":48.6388567,"lng":0.0848201},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (0.1494988,43.0193924)","lat":43.0193924,"lng":0.1494988},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (0.1534761,45.7519958)","lat":45.7519958,"lng":0.1534761},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (0.1655803,47.9217014)","lat":47.9217014,"lng":0.1655803},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (0.3033295,47.2648983)","lat":47.2648983,"lng":0.3033295},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (0.4502368,43.6366479)","lat":43.6366479,"lng":0.4502368},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (0.4502368,44.2470173)","lat":44.2470173,"lng":0.4502368},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (0.7572205,45.1469486)","lat":45.1469486,"lng":0.7572205},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (0.816097,47.2894925)","lat":47.2894925,"lng":0.816097},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (0.9582114,49.1181763)","lat":49.1181763,"lng":0.9582114},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (0.9748439,49.6054187)","lat":49.6054187,"lng":0.9748439},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (1.135302,43.4010462)","lat":43.4010462,"lng":1.135302},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (1.1989814,48.5525242)","lat":48.5525242,"lng":1.1989814},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (1.2891036,44.0126679)","lat":44.0126679,"lng":1.2891036},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (1.4025484,45.7435173)","lat":45.7435173,"lng":1.4025484},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (1.4159072,47.6761905)","lat":47.6761905,"lng":1.4159072},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (1.443469,42.9326292)","lat":42.9326292,"lng":1.443469},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (1.8256572,48.7850939)","lat":48.7850939,"lng":1.8256572},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.0195909,45.4320081)","lat":45.4320081,"lng":2.0195909},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.0627832,46.0377633)","lat":46.0377633,"lng":2.0627832},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.1569416,48.4585698)","lat":48.4585698,"lng":2.1569416},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.1581351,49.0615901)","lat":49.0615901,"lng":2.1581351},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.2018172,47.900771)","lat":47.900771,"lng":2.2018172},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.2188068,48.828508)","lat":48.828508,"lng":2.2188068},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.2593428,42.9569049)","lat":42.9569049,"lng":2.2593428},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.2707095,49.914518)","lat":49.914518,"lng":2.2707095},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.3244679,50.5732769)","lat":50.5732769,"lng":2.3244679},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.3522219,48.856614)","lat":48.856614,"lng":2.3522219},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.4146396,49.4214568)","lat":49.4214568,"lng":2.4146396},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.4740337,48.7931426)","lat":48.7931426,"lng":2.4740337},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.4845729,48.9137455)","lat":48.9137455,"lng":2.4845729},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.539603,42.6012912)","lat":42.6012912,"lng":2.539603},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.6189273,44.2179747)","lat":44.2179747,"lng":2.6189273},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.6326062,45.1191997)","lat":45.1191997,"lng":2.6326062},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (2.999366,48.841082)","lat":48.841082,"lng":2.999366},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (3.0155825,45.7124142)","lat":45.7124142,"lng":3.0155825},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (3.2583626,43.5912356)","lat":43.5912356,"lng":3.2583626},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (3.4167655,46.3115552)","lat":46.3115552,"lng":3.4167655},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (3.4417368,49.4769199)","lat":49.4769199,"lng":3.4417368},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (3.5294522,47.2381708)","lat":47.2381708,"lng":3.5294522},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (3.5812692,44.494203)","lat":44.494203,"lng":3.5812692},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (3.6079823,47.8652728)","lat":47.8652728,"lng":3.6079823},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (3.9266366,45.0821226)","lat":45.0821226,"lng":3.9266366},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (4.3732462,48.1563418)","lat":48.1563418,"lng":4.3732462},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (4.486671,46.5827512)","lat":46.5827512,"lng":4.486671},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (4.5624426,44.759629)","lat":44.759629,"lng":4.5624426},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (4.5677117,48.7083223)","lat":48.7083223,"lng":4.5677117},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (4.6285053,49.7624642)","lat":49.7624642,"lng":4.6285053},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (4.635412,47.5126795)","lat":47.5126795,"lng":4.635412},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (4.874339,45.525587)","lat":45.525587,"lng":4.874339},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (45.166244,-12.8275)","lat":-12.8275,"lng":45.166244},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (5.1071322,48.1260968)","lat":48.1260968,"lng":5.1071322},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (5.1307681,46.2475706)","lat":46.2475706,"lng":5.1307681},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (5.1432068,44.0565054)","lat":44.0565054,"lng":5.1432068},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (5.2266675,44.7311896)","lat":44.7311896,"lng":5.2266675},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (5.2823997,49.0824319)","lat":49.0824319,"lng":5.2823997},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (5.3102505,43.5911679)","lat":43.5911679,"lng":5.3102505},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (5.6864994,45.6402905)","lat":45.6402905,"lng":5.6864994},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (5.9293476,44.9957745)","lat":44.9957745,"lng":5.9293476},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (55.536384,-21.115141)","lat":-21.115141,"lng":55.536384},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (6.0947014,48.7997007)","lat":48.7997007,"lng":6.0947014},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (6.1556282,47.7569806)","lat":47.7569806,"lng":6.1556282},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (6.2375947,44.0778716)","lat":44.0778716,"lng":6.2375947},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (6.3126004,47.1969824)","lat":47.1969824,"lng":6.3126004},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (6.3226072,44.6008723)","lat":44.6008723,"lng":6.3226072},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (6.3355935,48.1446427)","lat":48.1446427,"lng":6.3355935},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (6.4724,45.4932045)","lat":45.4932045,"lng":6.4724},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (6.5389621,46.1756788)","lat":46.1756788,"lng":6.5389621},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (6.5527641,49.0983839)","lat":49.0983839,"lng":6.5527641},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (6.9207716,47.5946573)","lat":47.5946573,"lng":6.9207716},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (7.179026,43.9466791)","lat":43.9466791,"lng":7.179026},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (7.2441099,47.9315041)","lat":47.9315041,"lng":7.2441099},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (7.5252938,48.6343172)","lat":48.6343172,"lng":7.5252938},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (8.9245343,41.8102633)","lat":41.8102633,"lng":8.9245343},"timeSteps":1},{"dyn":{},"static":{"type":"bar","width":20,"height":65,"opacity":1,"labels":"none","labelMinSize":8,"labelMaxSize":24,"transitionTime":750,"fillColor":"#1f77b4","layerId":"_minichart (9.2785583,42.4097877)","lat":42.4097877,"lng":9.2785583},"timeSteps":1}],[[[113,120,487,284]],[[350,764,2147,917]],[[763,1368,4530,4941]],[[756,882,2691,3489]],[[248,226,1029,425]],[[219,409,1269,1106]],[[78,166,340,315]],[[255,350,1182,677]],[[241,319,1001,566]],[[292,359,1036,839]],[[376,570,2268,1544]],[[1000,1128,3790,2907]],[[96,340,825,511]],[[729,477,2053,2113]],[[198,187,979,576]],[[158,511,1394,965]],[[0,12,129,128]],[[63,268,745,602]],[[129,254,547,605]],[[260,187,1337,709]],[[360,138,997,214]],[[2712,3853,12565,7016]],[[284,554,1399,946]],[[14,107,259,502]],[[633,808,3608,4071]],[[171,181,966,1041]],[[94,99,901,476]],[[87,89,216,372]],[[402,412,1831,1676]],[[1266,1475,6964,3342]],[[104,70,424,192]],[[51,98,438,207]],[[17,83,344,303]],[[346,790,2561,1107]],[[333,143,1042,496]],[[1064,1563,5012,2954]],[[300,1563,3711,2873]],[[466,422,2662,1542]],[[39,131,250,116]],[[137,261,1023,507]],[[218,213,1226,634]],[[13,70,259,174]],[[3054,2762,14353,8433]],[[141,139,651,350]],[[36,130,306,79]],[[2208,3129,14985,5659]],[[4149,2510,12911,11645]],[[417,1066,3630,1943]],[[5384,6170,28411,16028]],[[478,263,1308,1134]],[[1339,1062,5048,2865]],[[975,1613,5792,3655]],[[10285,12013,45669,23513]],[[2566,1044,5876,4868]],[[5804,4439,28084,12035]],[[5421,3508,21287,10549]],[[291,506,1542,2306]],[[200,137,850,644]],[[0,111,367,89]],[[2453,2839,10761,8532]],[[154,493,1118,834]],[[888,1090,3686,4323]],[[138,266,745,959]],[[1641,602,3563,3204]],[[92,137,539,130]],[[0,19,113,152]],[[256,288,1375,748]],[[60,90,367,503]],[[618,340,2536,1371]],[[1099,524,2683,2904]],[[472,282,1473,2249]],[[1415,957,5611,4739]],[[118,254,1061,544]],[[1283,1004,4180,4981]],[[261,365,846,621]],[[37,52,269,278]],[[429,245,1406,808]],[[431,446,1691,1457]],[[249,310,1173,1273]],[[948,950,3583,2264]],[[526,317,2315,2088]],[[1877,3681,15822,13834]],[[3657,4011,17894,11219]],[[476,863,3388,2339]],[[0,51,620,715]],[[1917,2415,7238,4292]],[[593,248,1237,1198]],[[55,68,452,783]],[[826,1078,2838,2937]],[[27,218,824,785]],[[1962,522,3908,3142]],[[268,444,1694,2170]],[[985,1196,4157,4475]],[[5577,2523,15376,9153]],[[1375,609,3239,2715]],[[766,1088,3484,2939]],[[7703,2216,15648,15248]],[[4416,3989,16072,10818]],[[414,287,1149,735]],[[39,24,153,999]]],45669,["red","orange","yellow","green"],["1"],null,{"showTitle":true,"showValues":true,"labels":["deces_total","reanimation_total","hospitalises_total","gueris_total"],"supValues":null,"supLabels":[],"html":null,"noPopup":false,"digits":null},null]},{"method":"addLegend","args":[{"colors":["red","orange","yellow","green"],"labels":["deces_total","reanimation_total","hospitalises_total","gueris_total"],"na_color":null,"na_label":"NA","opacity":1,"position":"topright","type":"unknown","title":null,"extra":null,"layerId":"minichartsLegend","className":"info legend","group":null}]}],"limits":{"lat":[-21.115141,50.5732769],"lng":[-106.1202374,55.536384]}},"evals":[],"jsHooks":[]}</script><!--/html_preserve-->
 \
 Sur cette carte tous les départements de frances sont représentés (présence de zoom intéractif).\
 Les departements outre mer possèdent moins de cas de covid19\
@@ -696,7 +696,7 @@ mcor=cor(data[c(5:8)])
 corrplot(mcor, method="pie")
 ```
 
-![](main_files/figure-html/unnamed-chunk-17-1.png)<!-- -->
+![](main_files/figure-html/unnamed-chunk-18-1.png)<!-- -->
 \
 \
 2. Visualiser les nuages de points entre chaque variable et la variable à prédire «deces_total».
@@ -711,7 +711,7 @@ Quelles sont les variables qui permettent d’expliquer au mieux la variable à 
 plot(data[c(6:8)], col=data$deces_total)
 ```
 
-![](main_files/figure-html/unnamed-chunk-18-1.png)<!-- -->
+![](main_files/figure-html/unnamed-chunk-19-1.png)<!-- -->
 \
 Comme confirme plus tot les trois variables sont corrélé positivement à deces_total, les graphiques obtenues ont une tendances lineaire.\
 On remarque 3 groupes, un proche du coin inferieur gauche, un central, et un dernier compose d un point extreme au coin superieur droit.\
@@ -731,87 +731,87 @@ train
 ```
 
 ```
-##     deces_total reanimation_total hospitalises_total gueris_total
-## 67           37                52                269          278
-## 58          218               213               1226          634
-## 71         5577              2523              15376         9153
-## 66          248               226               1029          425
-## 42          985              1196               4157         4475
-## 96          292               359               1036          839
-## 75          171               181                966         1041
-## 68         1917              2415               7238         4292
-## 52          260               187               1337          709
-## 55         1266              1475               6964         3342
-## 81         3657              4011              17894        11219
-## 47          888              1090               3686         4323
-## 18          141               139                651          350
-## 41          593               248               1237         1198
-## 61            0                19                113          152
-## 31          284               554               1399          946
-## 49          360               138                997          214
-## 72           92               137                539          130
-## 94          633               808               3608         4071
-## 79          219               409               1269         1106
-## 85         2453              2839              10761         8532
-## 60           51                98                438          207
-## 26          948               950               3583         2264
-## 17          255               350               1182          677
-## 97          261               365                846          621
-## 39          429               245               1406          808
-## 14          350               764               2147          917
-## 73         2712              3853              12565         7016
-## 64         1415               957               5611         4739
-## 4            55                68                452          783
-## 65           63               268                745          602
-## 7           118               254               1061          544
-## 98         1962               522               3908         3142
-## 40           27               218                824          785
-## 76        10285             12013              45669        23513
-## 3           138               266                745          959
-## 6           472               282               1473         2249
-## 2          1641               602               3563         3204
-## 15            0               111                367           89
-## 88         1339              1062               5048         2865
-## 78          154               493               1118          834
-## 32          104                70                424          192
-## 86         1064              1563               5012         2954
-## 33          763              1368               4530         4941
-## 50          346               790               2561         1107
-## 20         1283              1004               4180         4981
-## 70          729               477               2053         2113
-## 51          476               863               3388         2339
-## 92         5804              4439              28084        12035
-## 80          291               506               1542         2306
-## 37          300              1563               3711         2873
-## 38           60                90                367          503
-## 100        3054              2762              14353         8433
-## 1           431               446               1691         1457
-## 30          158               511               1394          965
-## 13         1877              3681              15822        13834
-## 44          137               261               1023          507
-## 59           14               107                259          502
-## 99          256               288               1375          748
-## 48          376               570               2268         1544
-## 8            13                70                259          174
-## 24           17                83                344          303
-## 63          241               319               1001          566
-## 93         4149              2510              12911        11645
-## 28          333               143               1042          496
-## 11          200               137                850          644
-## 35            0                12                129          128
-## 27         2208              3129              14985         5659
-## 69          526               317               2315         2088
-## 74         2566              1044               5876         4868
-## 62          756               882               2691         3489
-## 21          198               187                979          576
-## 56         1000              1128               3790         2907
-## 90           39               131                250          116
-## 77          975              1613               5792         3655
-## 5           766              1088               3484         2939
-## 46         5384              6170              28411        16028
-## 16           87                89                216          372
-## 36           39                24                153          999
-## 12         4416              3989              16072        10818
+##    deces_total reanimation_total hospitalises_total gueris_total
+## 26         948               950               3583         2264
+## 52         260               187               1337          709
+## 17         255               350               1182          677
+## 4           55                68                452          783
+## 65          63               268                745          602
+## 25         826              1078               2838         2937
+## 83         402               412               1831         1676
+## 63         241               319               1001          566
+## 72          92               137                539          130
+## 24          17                83                344          303
+## 38          60                90                367          503
+## 9          618               340               2536         1371
+## 10         478               263               1308         1134
+## 56        1000              1128               3790         2907
+## 77         975              1613               5792         3655
+## 99         256               288               1375          748
+## 62         756               882               2691         3489
+## 53          78               166                340          315
+## 1          431               446               1691         1457
+## 97         261               365                846          621
+## 80         291               506               1542         2306
+## 13        1877              3681              15822        13834
+## 60          51                98                438          207
+## 88        1339              1062               5048         2865
+## 90          39               131                250          116
+## 46        5384              6170              28411        16028
+## 28         333               143               1042          496
+## 22          36               130                306           79
+## 47         888              1090               3686         4323
+## 57         417              1066               3630         1943
+## 89          96               340                825          511
+## 78         154               493               1118          834
+## 91        1375               609               3239         2715
+## 6          472               282               1473         2249
+## 31         284               554               1399          946
+## 98        1962               522               3908         3142
+## 96         292               359               1036          839
+## 49         360               138                997          214
+## 64        1415               957               5611         4739
+## 86        1064              1563               5012         2954
+## 59          14               107                259          502
+## 27        2208              3129              14985         5659
+## 36          39                24                153          999
+## 42         985              1196               4157         4475
+## 81        3657              4011              17894        11219
+## 74        2566              1044               5876         4868
+## 71        5577              2523              15376         9153
+## 40          27               218                824          785
+## 7          118               254               1061          544
+## 93        4149              2510              12911        11645
+## 48         376               570               2268         1544
+## 14         350               764               2147          917
+## 5          766              1088               3484         2939
+## 69         526               317               2315         2088
+## 44         137               261               1023          507
+## 20        1283              1004               4180         4981
+## 70         729               477               2053         2113
+## 50         346               790               2561         1107
+## 32         104                70                424          192
+## 95         249               310               1173         1273
+## 66         248               226               1029          425
+## 73        2712              3853              12565         7016
+## 55        1266              1475               6964         3342
+## 51         476               863               3388         2339
+## 54           0                51                620          715
+## 79         219               409               1269         1106
+## 82        1099               524               2683         2904
+## 8           13                70                259          174
+## 39         429               245               1406          808
+## 76       10285             12013              45669        23513
+## 43          94                99                901          476
+## 92        5804              4439              28084        12035
+## 33         763              1368               4530         4941
+## 68        1917              2415               7238         4292
+## 85        2453              2839              10761         8532
+## 37         300              1563               3711         2873
+## 23         113               120                487          284
+## 58         218               213               1226          634
+## 19         414               287               1149          735
+## 61           0                19                113          152
 ```
 
 ```r
@@ -827,27 +827,27 @@ test
 ```
 
 ```
-##    deces_total reanimation_total hospitalises_total gueris_total
-## 9          618               340               2536         1371
-## 10         478               263               1308         1134
-## 19         414               287               1149          735
-## 22          36               130                306           79
-## 23         113               120                487          284
-## 25         826              1078               2838         2937
-## 29         466               422               2662         1542
-## 34         129               254                547          605
-## 43          94                99                901          476
-## 45        7703              2216              15648        15248
-## 53          78               166                340          315
-## 54           0                51                620          715
-## 57         417              1066               3630         1943
-## 82        1099               524               2683         2904
-## 83         402               412               1831         1676
-## 84         268               444               1694         2170
-## 87        5421              3508              21287        10549
-## 89          96               340                825          511
-## 91        1375               609               3239         2715
-## 95         249               310               1173         1273
+##     deces_total reanimation_total hospitalises_total gueris_total
+## 2          1641               602               3563         3204
+## 3           138               266                745          959
+## 11          200               137                850          644
+## 12         4416              3989              16072        10818
+## 15            0               111                367           89
+## 16           87                89                216          372
+## 18          141               139                651          350
+## 21          198               187                979          576
+## 29          466               422               2662         1542
+## 30          158               511               1394          965
+## 34          129               254                547          605
+## 35            0                12                129          128
+## 41          593               248               1237         1198
+## 45         7703              2216              15648        15248
+## 67           37                52                269          278
+## 75          171               181                966         1041
+## 84          268               444               1694         2170
+## 87         5421              3508              21287        10549
+## 94          633               808               3608         4071
+## 100        3054              2762              14353         8433
 ```
 
 ```r
@@ -872,7 +872,7 @@ plot(data$reanimation_total, data$deces_total)
 abline(lm_reanimation, col="red")
 ```
 
-![](main_files/figure-html/unnamed-chunk-20-1.png)<!-- -->
+![](main_files/figure-html/unnamed-chunk-21-1.png)<!-- -->
 \
 Régression linéaire entre la variable à prédire deces_total et la variable explicative hospitalises_total.
 
@@ -882,7 +882,7 @@ plot(data$hospitalises_total, data$deces_total)
 abline(lm_hospitalises, col="red")
 ```
 
-![](main_files/figure-html/unnamed-chunk-21-1.png)<!-- -->
+![](main_files/figure-html/unnamed-chunk-22-1.png)<!-- -->
 \
 Régression linéaire entre la variable à prédire deces_total et la variable explicative gueris_total.
 
@@ -892,7 +892,7 @@ plot(data$gueris_total, data$deces_total)
 abline(lm_gueris, col="red")
 ```
 
-![](main_files/figure-html/unnamed-chunk-22-1.png)<!-- -->
+![](main_files/figure-html/unnamed-chunk-23-1.png)<!-- -->
 \
 Comme confirmé plus tot les trois variables sont corrélé positivement à deces_total, les graphiques obtenues ont une tendances lineaire.\
 Visuellement, les variables qui permettent de prédir au mieux deces_total sont les variables reanimation_total et hospitalises_total.\
@@ -904,7 +904,7 @@ On analyse en détails la régression linéaire sur reanimation_total.
 plot(lm_reanimation)
 ```
 
-![](main_files/figure-html/unnamed-chunk-23-1.png)<!-- -->![](main_files/figure-html/unnamed-chunk-23-2.png)<!-- -->![](main_files/figure-html/unnamed-chunk-23-3.png)<!-- -->![](main_files/figure-html/unnamed-chunk-23-4.png)<!-- -->
+![](main_files/figure-html/unnamed-chunk-24-1.png)<!-- -->![](main_files/figure-html/unnamed-chunk-24-2.png)<!-- -->![](main_files/figure-html/unnamed-chunk-24-3.png)<!-- -->![](main_files/figure-html/unnamed-chunk-24-4.png)<!-- -->
 \
 On analyse en détails la régression linéaire sur gueris_total.
 
@@ -912,7 +912,7 @@ On analyse en détails la régression linéaire sur gueris_total.
 plot(lm_gueris)
 ```
 
-![](main_files/figure-html/unnamed-chunk-24-1.png)<!-- -->![](main_files/figure-html/unnamed-chunk-24-2.png)<!-- -->![](main_files/figure-html/unnamed-chunk-24-3.png)<!-- -->![](main_files/figure-html/unnamed-chunk-24-4.png)<!-- -->
+![](main_files/figure-html/unnamed-chunk-25-1.png)<!-- -->![](main_files/figure-html/unnamed-chunk-25-2.png)<!-- -->![](main_files/figure-html/unnamed-chunk-25-3.png)<!-- -->![](main_files/figure-html/unnamed-chunk-25-4.png)<!-- -->
 \
 On analyse en détails la régression linéaire sur hospitalises_total
 
@@ -920,7 +920,7 @@ On analyse en détails la régression linéaire sur hospitalises_total
 plot(lm_hospitalises)
 ```
 
-![](main_files/figure-html/unnamed-chunk-25-1.png)<!-- -->![](main_files/figure-html/unnamed-chunk-25-2.png)<!-- -->![](main_files/figure-html/unnamed-chunk-25-3.png)<!-- -->![](main_files/figure-html/unnamed-chunk-25-4.png)<!-- -->
+![](main_files/figure-html/unnamed-chunk-26-1.png)<!-- -->![](main_files/figure-html/unnamed-chunk-26-2.png)<!-- -->![](main_files/figure-html/unnamed-chunk-26-3.png)<!-- -->![](main_files/figure-html/unnamed-chunk-26-4.png)<!-- -->
 \
 Sur les graphiques de type Residuals vs Leverage on remarqu'une valeurs extreme ayant une mauvaise influence sur notre regression.\
 les valeurs extreme se situe à l'exterieur de la courbe en pointillées.\
@@ -939,13 +939,13 @@ plot(dataop$hospitalises_total, dataop$deces_total)
 abline(lm_hospitalises, col="red")
 ```
 
-![](main_files/figure-html/unnamed-chunk-26-1.png)<!-- -->
+![](main_files/figure-html/unnamed-chunk-27-1.png)<!-- -->
 
 ```r
 plot(lm_hospitalises)
 ```
 
-![](main_files/figure-html/unnamed-chunk-26-2.png)<!-- -->![](main_files/figure-html/unnamed-chunk-26-3.png)<!-- -->![](main_files/figure-html/unnamed-chunk-26-4.png)<!-- -->![](main_files/figure-html/unnamed-chunk-26-5.png)<!-- -->
+![](main_files/figure-html/unnamed-chunk-27-2.png)<!-- -->![](main_files/figure-html/unnamed-chunk-27-3.png)<!-- -->![](main_files/figure-html/unnamed-chunk-27-4.png)<!-- -->![](main_files/figure-html/unnamed-chunk-27-5.png)<!-- -->
 \
 Régression linéaire OPTIMISE entre la variable à predire deces_total et la variable explicative reanimation_total.
 
@@ -956,13 +956,13 @@ plot(dataop$reanimation_total, dataop$deces_total)
 abline(lm_reanimation, col="red")
 ```
 
-![](main_files/figure-html/unnamed-chunk-27-1.png)<!-- -->
+![](main_files/figure-html/unnamed-chunk-28-1.png)<!-- -->
 
 ```r
 plot(lm_reanimation)
 ```
 
-![](main_files/figure-html/unnamed-chunk-27-2.png)<!-- -->![](main_files/figure-html/unnamed-chunk-27-3.png)<!-- -->![](main_files/figure-html/unnamed-chunk-27-4.png)<!-- -->![](main_files/figure-html/unnamed-chunk-27-5.png)<!-- -->
+![](main_files/figure-html/unnamed-chunk-28-2.png)<!-- -->![](main_files/figure-html/unnamed-chunk-28-3.png)<!-- -->![](main_files/figure-html/unnamed-chunk-28-4.png)<!-- -->![](main_files/figure-html/unnamed-chunk-28-5.png)<!-- -->
 \
 Régression linéaire OPTIMISE entre la variable à predire deces_total et la variable explicative gueris_total.
 
@@ -973,13 +973,13 @@ plot(dataop$gueris_total, dataop$deces_total)
 abline(lm_gueris, col="red")
 ```
 
-![](main_files/figure-html/unnamed-chunk-28-1.png)<!-- -->
+![](main_files/figure-html/unnamed-chunk-29-1.png)<!-- -->
 
 ```r
 plot(lm_gueris)
 ```
 
-![](main_files/figure-html/unnamed-chunk-28-2.png)<!-- -->![](main_files/figure-html/unnamed-chunk-28-3.png)<!-- -->![](main_files/figure-html/unnamed-chunk-28-4.png)<!-- -->![](main_files/figure-html/unnamed-chunk-28-5.png)<!-- -->
+![](main_files/figure-html/unnamed-chunk-29-2.png)<!-- -->![](main_files/figure-html/unnamed-chunk-29-3.png)<!-- -->![](main_files/figure-html/unnamed-chunk-29-4.png)<!-- -->![](main_files/figure-html/unnamed-chunk-29-5.png)<!-- -->
 \
 Residuals vs Leverag:\
 Pour les 3 variables nous avons maintenant  un trace  Residuals vs Leverage correct.\
@@ -1255,8 +1255,8 @@ mae_hospitalises
 
 ```
 ##            mae     mse
-## test  1506.859 7037482
-## train 1391.756 5689089
+## test  1760.712 8113539
+## train 1200.648 4796667
 ```
 
 ```r
@@ -1265,8 +1265,8 @@ mae_reanimation
 
 ```
 ##            mae     mse
-## test  1427.983 6445872
-## train 1346.914 5293813
+## test  1741.597 7780556
+## train 1162.385 4496188
 ```
 
 ```r
@@ -1275,8 +1275,8 @@ mae_gueris
 
 ```
 ##            mae     mse
-## test  1595.996 7169644
-## train 1462.694 5749772
+## test  1801.281 7979301
+## train 1249.642 4556206
 ```
 \
 On remarque qu'entre le mae test (20%) et mae train (80%) une faible variance.\
@@ -1309,7 +1309,7 @@ library(FactoMineR)
 pca=PCA(data[c(5:8)])
 ```
 
-![](main_files/figure-html/unnamed-chunk-35-1.png)<!-- -->![](main_files/figure-html/unnamed-chunk-35-2.png)<!-- -->
+![](main_files/figure-html/unnamed-chunk-36-1.png)<!-- -->![](main_files/figure-html/unnamed-chunk-36-2.png)<!-- -->
 
 ```r
 summary(pca)
@@ -1381,7 +1381,7 @@ axe=pca$eig
 barplot(axe[,2], xlab="composents", ylab="variance %")
 ```
 
-![](main_files/figure-html/unnamed-chunk-36-1.png)<!-- -->
+![](main_files/figure-html/unnamed-chunk-37-1.png)<!-- -->
 Le pca permet de reduire nos dimensions en perdant un minimum d information.\
 On passant de 4 dimensions a 2 dimensions, nous conservons 98.267% de nos donnees (inertie), que nous représentont dans le grapique PCA graph if individuals.\
 Avec les 4 dimensions on a 100% d information, c'est le plan d inertie maximum\
@@ -1405,7 +1405,7 @@ monplot=ggplot(ind, aes(x=Dim.1, y=Dim.2, color=data$deces_total)) + geom_point(
 monplot
 ```
 
-![](main_files/figure-html/unnamed-chunk-37-1.png)<!-- -->
+![](main_files/figure-html/unnamed-chunk-38-1.png)<!-- -->
 \
 Moins il y a de mort, et plus les departements ont des variables similaire (reanimation_total gueris_total et hospitalises_total), cela forme un cluster.
 \
@@ -1423,28 +1423,28 @@ kmeans = kmeans(ind,2)
 plot(ind$Dim.1,ind$Dim.2, col=kmeans$cluster)
 ```
 
-![](main_files/figure-html/unnamed-chunk-38-1.png)<!-- -->
+![](main_files/figure-html/unnamed-chunk-39-1.png)<!-- -->
 
 ```r
 kmeans = kmeans(ind,3)
 plot(ind$Dim.1,ind$Dim.2, col=kmeans$cluster)
 ```
 
-![](main_files/figure-html/unnamed-chunk-38-2.png)<!-- -->
+![](main_files/figure-html/unnamed-chunk-39-2.png)<!-- -->
 
 ```r
 kmeans = kmeans(ind,4)
 plot(ind$Dim.1,ind$Dim.2, col=kmeans$cluster)
 ```
 
-![](main_files/figure-html/unnamed-chunk-38-3.png)<!-- -->
+![](main_files/figure-html/unnamed-chunk-39-3.png)<!-- -->
 
 ```r
 kmeans = kmeans(ind,5)
 plot(ind$Dim.1,ind$Dim.2, col=kmeans$cluster)
 ```
 
-![](main_files/figure-html/unnamed-chunk-38-4.png)<!-- -->
+![](main_files/figure-html/unnamed-chunk-39-4.png)<!-- -->
 \
 CAH lien minimum
 
@@ -1454,7 +1454,7 @@ hcmin=hclust(dist, method = "single")
 plot(hcmin, hang=-1)
 ```
 
-![](main_files/figure-html/unnamed-chunk-39-1.png)<!-- -->
+![](main_files/figure-html/unnamed-chunk-40-1.png)<!-- -->
 \
 CAH lien moyen
 
@@ -1463,7 +1463,7 @@ hcmoy=hclust(dist, method = "average")
 plot(hcmoy, hang=-1)
 ```
 
-![](main_files/figure-html/unnamed-chunk-40-1.png)<!-- -->
+![](main_files/figure-html/unnamed-chunk-41-1.png)<!-- -->
 \
 CAH lien maximum
 
@@ -1472,7 +1472,7 @@ hcmax=hclust(dist, method = "complete")
 plot(hcmax, hang=-1)
 ```
 
-![](main_files/figure-html/unnamed-chunk-41-1.png)<!-- -->
+![](main_files/figure-html/unnamed-chunk-42-1.png)<!-- -->
 \
 CAH lien ward
 
@@ -1482,7 +1482,7 @@ hcward=hclust(dist, method = "complete")
 plot(hcward, hang=-1)
 ```
 
-![](main_files/figure-html/unnamed-chunk-42-1.png)<!-- -->
+![](main_files/figure-html/unnamed-chunk-43-1.png)<!-- -->
 \
 Avec le nombrede classe=1, pas d interet.\
 Avec un nombre de classe=2, dans le kmeans =2 on voit une bonne séparation des individus cela peut etre un bon choix.\
@@ -1634,7 +1634,7 @@ lines(x=jitter(tab$hcmax_x,factor=10), y=jitter(tab$hcmax_y,factor=10),col='gree
 lines(x=jitter(tab$hcward_x,factor=10),y=jitter(tab$hcward_y,factor=10),col='black',type='p')
 ```
 
-![](main_files/figure-html/unnamed-chunk-44-1.png)<!-- -->
+![](main_files/figure-html/unnamed-chunk-45-1.png)<!-- -->
 
 ```r
 plot(x=(tab$min_x),y=(tab$min_y),type="p",col="red")
@@ -1643,7 +1643,7 @@ lines(x=(tab$hcmax_x), y=(tab$hcmax_y),col='green',type='p')
 lines(x=(tab$hcward_x),y=jitter(tab$hcward_y),col='black',type='p')
 ```
 
-![](main_files/figure-html/unnamed-chunk-44-2.png)<!-- -->
+![](main_files/figure-html/unnamed-chunk-45-2.png)<!-- -->
 \
 Les 4 méthodes ward min max moy detectent a peu près au meme endroits les même individus (lorsqu'il y en a beaucoup).\
 Les 4 méthodes se mettent en accord pour former les même cluster lorsque cela est evident, cela s'observe en haut à droite.\
