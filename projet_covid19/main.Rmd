@@ -1,6 +1,7 @@
 ---
 title: "covid19"
-output: rmarkdown::github_document
+output:
+      html_document:
         keep_md: true
 ---
 
@@ -29,7 +30,6 @@ Avril 2020 au 14 Avril 2020.
 1. Charger le jeu de donnée sous R
 
 ```{r}
-knitr::opts_chunk$set(fig.path = "main_files/figure-gfm/unnamed-chunk-3-1.png")
 data=read.csv2("donnes_covid19_avril_total_par_departement_GPS.csv")
 #View(data)
 data
