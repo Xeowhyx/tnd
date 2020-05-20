@@ -247,7 +247,7 @@ x=basemap %>%
 ```
 
 ```{r echo=FALSE}
-x
+#x
 ```
 \
 Sur cette carte tous les départements de frances sont représentés (présence de zoom intéractif).\
